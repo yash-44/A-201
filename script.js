@@ -9,6 +9,7 @@ let arr = [
 ];
 
 function PrintDeveloperswithMap() {
+  output.innerHTML = ""
   arr.map((value) => {
     if (value.profession === "developer") {
       console.log(value)
@@ -21,6 +22,7 @@ function PrintDeveloperswithMap() {
 }
 
 function PrintDeveloperbyForEach() {
+  output.innerHTML = ""
   let ans
   arr.forEach(element => {
     if (element.profession === "developer") {
@@ -34,6 +36,7 @@ function PrintDeveloperbyForEach() {
 }
 
 function addData() {
+  output.innerHTML = ""
   let arr1 = { id: 4, name: "susan", age: "20", profession: "intern" }
   arr.push(arr1)
   arr.map((value)=>{
@@ -46,6 +49,7 @@ function addData() {
 }
 
 function removeAdmin() {
+  output.innerHTML = ""
   arr.map((value,index)=>{
     if(value.profession === "admin"){
       arr.splice(index)
@@ -61,6 +65,7 @@ function removeAdmin() {
 }
 
 function concatenateArray() {
+  output.innerHTML = ""
   let arr2 = [
     { id: 7, name: "rohan", age: "25", profession: "manager" },
     { id: 8, name: "hiren", age: "20", profession: "developer" },
