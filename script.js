@@ -1,5 +1,7 @@
 /** @format */
 
+let output = document.getElementById("output")
+
 let arr = [
   { id: 1, name: "john", age: "18", profession: "developer" },
   { id: 2, name: "jack", age: "20", profession: "developer" },
@@ -10,6 +12,10 @@ function PrintDeveloperswithMap() {
   arr.map((value) => {
     if (value.profession === "developer") {
       console.log(value)
+      output.innerHTML += `<div>map<p>id = ${value.id}</p>
+      <p>name = ${value.name}</p>
+      <p>age = ${value.age}</p>
+      <p>profession = ${value.profession}</p></div><hr>`
     }
   })
 }
@@ -19,6 +25,10 @@ function PrintDeveloperbyForEach() {
   arr.forEach(element => {
     if (element.profession === "developer") {
       console.log(element)
+      output.innerHTML += `<div>foreach<p>id = ${element.id}</p>
+      <p>name = ${element.name}</p>
+      <p>age = ${element.age}</p>
+      <p>profession = ${element.profession}</p></div><hr>`
     }
   })
 }
@@ -26,14 +36,26 @@ function PrintDeveloperbyForEach() {
 function addData() {
   let arr1 = { id: 4, name: "susan", age: "20", profession: "intern" }
   arr.push(arr1)
-  console.log("add data",arr)
+  arr.map((value)=>{
+    console.log("add data",value)
+    output.innerHTML += `<div>add data<p>id = ${value.id}</p>
+        <p>name = ${value.name}</p>
+        <p>age = ${value.age}</p>
+        <p>profession = ${value.profession}</p></div><hr>`
+  })
 }
 
 function removeAdmin() {
   arr.map((value,index)=>{
     if(value.profession === "admin"){
       arr.splice(index)
-      console.log(arr)
+      arr.map((value)=>{
+        console.log(value)
+        output.innerHTML += `<div>remove admin<p>id = ${value.id}</p>
+            <p>name = ${value.name}</p>
+            <p>age = ${value.age}</p>
+            <p>profession = ${value.profession}</p></div><hr>`
+      })
     }
   })
 }
@@ -45,7 +67,13 @@ function concatenateArray() {
     { id: 9, name: "jyoti", age: "22", profession: "clark" },
   ];
   let m = arr.concat(arr2)
-  console.log(m)
+  m.map((value)=>{
+    console.log(value)
+    output.innerHTML += `<div>Concat <p>id = ${value.id}</p>
+        <p>name = ${value.name}</p>
+        <p>age = ${value.age}</p>
+        <p>profession = ${value.profession}</p></div><hr>`
+  })
 }
 
 // PrintDeveloperswithMap()
